@@ -1,0 +1,583 @@
+body {
+  background-color: #2a1f6b; /* Set the body background color */
+}
+
+.main {
+  position: relative;
+  flex: 1;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Add this new rule for the gradient overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: -1;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 60px; /* Adjust based on your layout to position near the bottom of the image */
+  right: 10px; /* Adjust based on your layout */
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  border-radius: 15px; /* Circular edges */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px; /* Adjust padding for better spacing */
+  width: 130px; /* Adjust width to make it smaller */
+}
+
+.dropdown-menu p {
+  margin: 0;
+  padding: 8px; /* Adjust padding for better spacing */
+  cursor: pointer;
+  color: white; /* Text color for better visibility */
+  text-align: center; /* Center align text */
+  font-size: 14px; /* Adjust font size */
+}
+
+.dropdown-menu p + p {
+  margin-top: 5px; /* Add spacing between items */
+  border-top: 1px solid white; /* Add white line separator */
+  padding-top: 5px; /* Add padding to separate from the line */
+}
+
+.dropdown-menu p:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white on hover */
+}
+
+.user-icon {
+  cursor: pointer;
+}
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-bottom: 15vh;
+}
+
+.main .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  padding: 20px;
+  color: #ffffff; /* Adjust text colors for better visibility */
+}
+
+.main .nav .press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #a1adec; /* Dark blue for nav font */
+}
+
+.main .nav img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.greet {
+  margin: 30px 0px;
+  font-size: 56px;
+  color: #ffffff; /* Adjust text colors for better visibility */
+  font-weight: 500;
+  padding: 20px;
+}
+
+.greet span {
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Standard property */
+   /* Standard property */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 60px;
+  margin-top: -20px; /* Move the cards upwards */
+}
+
+.card {
+  height: 200px;
+  padding: 15px;
+  background-color: rgba(243, 242, 240, 0.8);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #dfe4ea;
+}
+
+.card p {
+  color: #2f396a; /* Dark blue for card text */
+  font-size: 17px;
+}
+
+.card img {
+  width: 35px;
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.main-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+  margin: auto;
+  margin-top: 20px; /* Add margin to separate from .cards */
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: rgba(255, 216, 180, 0.8);
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 18px;
+  color: #2f396a; /* Dark blue for input text */
+}
+
+.search-box div {
+  display: flex;
+  gap: 15px;
+}
+
+.search-box img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.bottom-info {
+  font-size: 13px;
+  margin: 15px auto;
+  text-align: center;
+  font-weight: 300;
+  color: #e0e0e0; /* Adjust text colors for better visibility */
+}
+
+.result {
+  padding: 0% 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result-title {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #fc9d1c; /* Orange for result title text */
+}
+
+.result img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-data {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.animated-bg {
+  border-radius: 4px;
+  border: none;
+  animation: loader 3s infinite linear;
+  background-color: #f3f2f0;
+  background: linear-gradient(
+    to right,
+    #859ee0,
+    #ffffff,
+    #859ee0
+  ); /* Light blue for gradient */
+  background-size: 800px 50px;
+  height: 20px;
+}
+
+@keyframes loader {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+.result-data p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #2f396a; /* Dark blue for result text */
+}
+
+@media (max-width: 600px) {
+  .main-bottom input {
+    flex: none;
+    width: 140px;
+  }
+
+  .main-bottom img {
+    width: 20px;
+  }
+
+  .search-box {
+    padding: 5px 10px;
+    color: #859ee0;
+  }
+
+  .search-box div {
+    gap: 5px;
+  }
+}
+
+.virtual-tour-card {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(255, 216, 180, 0.8);
+  border-radius: 5px;
+}
+
+.virtual-tour-card p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.virtual-tour-card a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.virtual-tour-card a:hover {
+  text-decoration: underline;
+}
+
+.chat-container {
+  height: 75vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.chat-entry {
+  margin-bottom: 20px;
+}
+
+.user-message, .bot-response {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.user-message img, .bot-response img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.bot-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+}
+
+.user-message p, .bot-response .bot-content p {
+  background-color: rgba(240, 240, 240, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.bot-response .bot-content p {
+  background-color: rgba(230, 243, 255, 0.8);
+}
+
+.virtual-tour-card {
+  background-color: rgba(255, 216, 180, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.virtual-tour-card p {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2f396a;
+}
+
+.virtual-tour-card a {
+  color: #007bff;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.virtual-tour-card a:hover {
+  text-decoration: underline;
+}
+
+.bot-response {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.bot-response > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.bot-content {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(90% - 40px); /* Subtracting the width of the image plus its margin */
+}
+
+.bot-response .bot-content p {
+  background-color: rgba(230, 243, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Make container full width */
+  max-width: 500px; /* Limit maximum width */
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-gallery img {
+  width: 100%; /* Make image fill the container */
+  height: 300px; /* Maintain aspect ratio */
+  max-height: 500px; /* Limit maximum height */
+  object-fit: contain; /* Ensure entire image is visible */
+  border-radius: 10px;
+}
+
+.image-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #2f396a;
+  text-align: center;
+}
+
+/* Adjust bot content to allow for larger images */
+.bot-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%; /* Increase from 70% to allow more space for images */
+}
+
+/* For smaller screens, adjust the image size */
+@media (max-width: 600px) {
+  .image-container {
+    max-width: 100%;
+  }
+  
+  .image-gallery img {
+    max-height: 100px;
+  }
+}
+
+.book-doctor-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.book-doctor-btn:hover {
+  background-color: #45a049;
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2f396a;
+  font-size: 24px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2f396a;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-container textarea {
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.form-buttons button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.form-buttons button[type="button"]:hover {
+  background-color: #d32f2f;
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.bot-content p {
+  margin-bottom: 10px;
+  white-space: pre-wrap; /* This preserves whitespace and allows wrapping */
+}
+
+.bot-content strong {
+  font-weight: bold;
+}

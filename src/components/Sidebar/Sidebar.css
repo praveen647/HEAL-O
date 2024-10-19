@@ -1,0 +1,108 @@
+.sidebar {
+  min-height: 100vh;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 216, 180, 0.8); /* Sidebar with orange background */
+  padding: 25px 15px;
+  width: 60px; /* default width */
+  transition: width 0.3s ease;
+}
+
+.sidebar img {
+  width: 20px;
+}
+
+.sidebar .menu {
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sidebar .new-chat {
+  margin-top: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px; /* Reduced padding */
+  background-color: #f3f2f0; /* Button with light background */
+  border-radius: 50px;
+  font-size: 14px;
+  color: grey;
+  cursor: pointer;
+}
+
+.sidebar .recent {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 2s;
+}
+
+.sidebar .recent-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #2f396a; /* Dark blue for title text */
+}
+
+.sidebar .recent-entry {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  padding: 5px 10px; /* Reduced padding */
+  padding-right: 30px; /* Adjusted padding */
+  border-radius: 50px;
+  color: #282828;
+  background-color: #f3f2f0; /* Light background for entries */
+  cursor: pointer;
+  position: relative;
+}
+
+.sidebar .recent-entry:hover {
+  background-color: #e2e6eb;
+}
+
+.sidebar .recent-entry:hover .delete-chat-btn {
+  opacity: 1;
+}
+
+.delete-chat-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.delete-chat-btn:hover {
+  color: #ff4d4d;
+}
+
+.sidebar .bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .bottom-item {
+  padding-right: 5px; /* Reduced padding */
+  cursor: pointer;
+  color: #2f396a; /* Dark blue for bottom items */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sidebar.extended {
+  width: 250px; /* extended width */
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
